@@ -1,0 +1,37 @@
+[
+  {
+    "id": 1,
+    "name": "Thomas Hill Hotel",
+    "location": "Jakarta",
+    "rating": 4,
+    "description": "Thomas Hill Hotel memadukan kemewahan dan misteri dengan desain arsitektur yang elegan dan fasilitas berkelas. Dengan lokasi strategis yang menawarkan pemandangan kota yang memukau, manor ini adalah pilihan ideal untuk liburan romantis atau perjalanan bisnis. Nikmati layanan spa, restoran gourmet, dan kamar-kamar yang bergaya kontemporer."
+  },
+  {
+    "id": 2,
+    "name": "Elegant Palace",
+    "location": "Surabaya",
+    "rating": 3,
+    "description": "Elegant Palace menggabungkan kemewahan dan keanggunan dengan suasana modern. Dengan pemandangan kota yang memukau dan fasilitas canggih seperti pusat kebugaran dan kolam renang atap, hotel ini adalah pilihan ideal bagi pelancong bisnis dan wisatawan yang mencari pengalaman menginap yang istimewa."
+  },
+  {
+    "id": 3,
+    "name": "Rainbow Vale",
+    "location": "Malang",
+    "rating": 5,
+    "description": "Rainbow Vale terletak di tengah hutan pinus yang rimbun, menawarkan suasana damai dan alami. Dengan desain yang ramah lingkungan dan fasilitas outdoor seperti jalur hiking dan area piknik, resort ini cocok untuk keluarga dan pasangan yang mencari petualangan atau sekadar bersantai di alam."
+  },
+  {
+    "id": 4,
+    "name": "Tanzia Lounge",
+    "location": "Payakumbuah",
+    "rating": 5,
+    "description": "Tanzia Lounge menawarkan suasana tenang di tengah keindahan alam. Terletak di tepi hutan lebat dan dikelilingi oleh pohon oak yang megah, lodge ini menyuguhkan pengalaman menginap yang nyaman dengan fasilitas modern dan sentuhan klasik. Nikmati pagi hari dengan sarapan yang disajikan di teras dengan pemandangan luar biasa."
+  },
+  {
+    "id": 5,
+    "name": "Sunset Ridge Inn",
+    "location": "Makkassar",
+    "rating": 3,
+    "description": "Sunset Ridge Inn menawarkan pengalaman menginap yang elegan dan intim dengan sentuhan romantis. Terletak di pusat kota, hotel ini memiliki suite-suite yang dirancang dengan gaya mewah dan fasilitas yang lengkap, termasuk layanan kamar 24 jam dan spa pribadi. Ideal untuk pasangan yang ingin merayakan momen spesial."
+  }
+]
