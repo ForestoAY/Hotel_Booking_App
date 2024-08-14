@@ -1,0 +1,9 @@
+[
+  {
+    "id": 1,
+    "userName": "Jin Kazama",
+    "email": "kazama@mishima.com",
+    "passWord": "deviljin",
+    "role": "admin"
+  }
+]

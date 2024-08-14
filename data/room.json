@@ -1,0 +1,106 @@
+[
+  {
+    "id": 1,
+    "HotelId": 1,
+    "roomNumber": 1,
+    "price": 400000,
+    "type": "single bed",
+    "status": "available"
+  },
+  {
+    "id": 2,
+    "HotelId": 1,
+    "roomNumber": 2,
+    "price": 450000,
+    "type": "twin bed",
+    "status": "available"
+  },
+  {
+    "id": 3,
+    "HotelId": 1,
+    "roomNumber": 3,
+    "price": 500000,
+    "type": "queen bed",
+    "status": "available"
+  },
+  {
+    "id": 4,
+    "HotelId": 2,
+    "roomNumber": 1,
+    "price": 300000,
+    "type": "single bed",
+    "status": "available"
+  },
+  {
+    "id": 5,
+    "HotelId": 2,
+    "roomNumber": 2,
+    "price": 400000,
+    "type": "twin bed",
+    "status": "available"
+  },
+  {
+    "id": 6,
+    "HotelId": 3,
+    "roomNumber": 1,
+    "price": 500000,
+    "type": "single bed",
+    "status": "available"
+  },
+  {
+    "id": 7,
+    "HotelId": 3,
+    "roomNumber": 2,
+    "price": 550000,
+    "type": "twin bed",
+    "status": "available"
+  },
+  {
+    "id": 8,
+    "HotelId": 3,
+    "roomNumber": 3,
+    "price": 600000,
+    "type": "queen bed",
+    "status": "available"
+  },
+  {
+    "id": 9,
+    "HotelId": 4,
+    "roomNumber": 1,
+    "price": 500000,
+    "type": "single bed",
+    "status": "available"
+  },
+  {
+    "id": 10,
+    "HotelId": 4,
+    "roomNumber": 2,
+    "price": 550000,
+    "type": "twin bed",
+    "status": "available"
+  },
+  {
+    "id": 11,
+    "HotelId": 4,
+    "roomNumber": 3,
+    "price": 600000,
+    "type": "queen bed",
+    "status": "available"
+  },
+  {
+    "id": 12,
+    "HotelId": 5,
+    "roomNumber": 3,
+    "price": 450000,
+    "type": "queen bed",
+    "status": "available"
+  },
+  {
+    "id": 13,
+    "HotelId": 5,
+    "roomNumber": 2,
+    "price": 400000,
+    "type": "twin bed",
+    "status": "available"
+  }
+]
