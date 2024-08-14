@@ -1,9 +1,9 @@
 [
   {
     "id": 1,
-    "userName": "Jin Kazama",
+    "username": "Jin Kazama",
     "email": "kazama@mishima.com",
-    "passWord": "deviljin",
+    "password": "deviljin",
     "role": "admin"
   }
 ]
