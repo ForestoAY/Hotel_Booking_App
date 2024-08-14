@@ -17,17 +17,56 @@ module.exports = (sequelize, DataTypes) => {
     }
   }
   User.init({
-    username: DataTypes.STRING,
-    email: DataTypes.STRING,
-    password: DataTypes.STRING,
-    role: DataTypes.STRING
+    username: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      validate: {
+        notEmpty: {
+          msg: "Username tidak boleh kosong"
+        },
+        notNull: {
+          msg: "Username tidak boleh kosong"
+        }
+      }
+    },
+    email: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      unique: {
+        name: 'email',
+        msg: 'Email sudah digunakan'
+      },
+      validate: {
+        notEmpty: {
+          msg: "Email tidak boleh kosong"
+        },
+        notNull: {
+          msg: "Email tidak boleh kosong"
+        }
+      }
+    },
+    password: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      validate: {
+        notEmpty: {
+          msg: "Password tidak boleh kosong"
+        },
+        notNull: {
+          msg: "Password tidak boleh kosong"
+        }
+      }
+    },
+    role: {
+      type: DataTypes.STRING
+    }
   }, {
     hooks: {
       beforeCreate(instance, options){
         const salt = bcrypt.genSaltSync(10);
         const hash = bcrypt.hashSync(instance.password, salt);
-
         instance.password = hash;
+        instance.role = 'customer';
       }
     },
     sequelize,
