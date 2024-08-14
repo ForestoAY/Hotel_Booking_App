@@ -1,20 +1,14 @@
-<%- include('partials/Header', {title: "Register"}) %>
+<%- include('partials/Header', {title: "Login"}) %>
 <div class="container">
-  <% if (errors) { %>
-      <% errors.forEach((e) => { %>
-        <div class="alert alert-danger" role="alert">
-          <%= e %>
-        </div>
-      <% }) %>
-    <%}%>
-  <form action="/register" method="post">
+  <% if (errorLogin){ %>
+    <div class="alert alert-danger mt-3" role="alert">
+      <%= errorLogin %>
+    </div>
+  <%} %>
+  <form action="/login" method="post">
     <div class="mb-3 mt-3">
       <label for="inputEmail" class="form-label">Email address</label>
       <input type="email" class="form-control" id="inputEmail" name="email">
-    </div>
-    <div class="mb-3">
-      <label for="inputUsername" class="form-label">Username</label>
-      <input type="text" class="form-control" id="inputUsername" name="username">
     </div>
     <div class="mb-3">
       <label for="inputPassword" class="form-label">Password</label>

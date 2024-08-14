@@ -1,7 +1,7 @@
 {
   "development": {
-    "username": "indra",
-    "password": "qwerasdf",
+    "username": "postgres",
+    "password": "admin1234",
     "database": "hotel_booking_app",
     "host": "localhost",
     "dialect": "postgres",
