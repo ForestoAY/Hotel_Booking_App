@@ -1,0 +1,29 @@
+<%- include('partials/HeaderIsLogin', {title: "Reserve Room", user}) %>
+<%- include('partials/Navbar') %>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>No</th>
+        <th>Check In</th>
+        <th>Batas Check Out</th>
+        <th>Price</th>
+        <th>Status</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% data.forEach((e, i) => { %>
+        <tr>
+          <td><%= i+1 %></td>
+          <td><%= e.checkIn %></td>
+          <td><%= e.checkOut %></td>
+          <td><%= e.totalPrice %></td>
+          <td><%= e.status %></td>
+          <td>
+            <a class="btn btn-warning" href="/checkout/<%= e.id %>">Check Out</a>
+          </td>
+        </tr>
+      <%}) %>
+    </tbody>
+  </table>
+<%- include('partials/Footer') %>

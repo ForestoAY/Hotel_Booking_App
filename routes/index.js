@@ -53,13 +53,20 @@ router.post('/profile/:id/edit', UserController.postEditProfile);
 router.get('/hotel', HotelController.readHotel);
 
 // Detail Hotel
-router.get('/hotel/detail/:id', HotelController.readDetailHotel)
+router.get('/hotel/detail/:id', HotelController.readDetailHotel);
 
-// Reserve Hotel
-router.get('/hotel/detail/:id/reserve', HotelController.getReserveRoom)
-router.post('/hotel/detail/:id/reserve', HotelController.postReserveRoom)
+// Booking Hotel
+router.get('/hotel/detail/:idUser/booking/:idRoom', HotelController.bookingRoom);
+router.post('/hotel/detail/:idUser/booking/:idRoom', HotelController.postBookingRoom);
+
+// Reservasi List
+router.get('/hotel/reservation/:id', HotelController.readReservation);
+
+// Checkout
+router.get('/checkout/:id', HotelController.getCheckout);
+
 
 // Logout
-router.get('/logout', UserController.getLogout)
+router.get('/logout', UserController.getLogout);
 
 module.exports = router;
