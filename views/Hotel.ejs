@@ -1,0 +1,24 @@
+<%- include('partials/HeaderIsLogin', {title: "List Hotel", user}) %>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>No</th>
+        <th>Name</th>
+        <th>Location</th>
+        <th>Rating</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% hotel.forEach((e, i) => { %>
+        <tr>
+          <td><%= i+1 %></td>
+          <td><%= e.name %></td>
+          <td><%= e.location %></td>
+          <td><%= e.rating %></td>
+          <td><%= e.description %></td>
+        </tr>
+      <%}) %>
+    </tbody>
+  </table>
+<%- include('partials/Footer') %>
