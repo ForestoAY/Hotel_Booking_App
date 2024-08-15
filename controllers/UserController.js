@@ -48,7 +48,7 @@ class UserController {
           req.session.userId = user.id;
           req.session.role = user.role;
 
-          return res.redirect('/listHotel');
+          return res.redirect('/hotel');
         } else {
           const error = "Invalid email or password";
           return res.redirect(`/login?errors=${error}`);

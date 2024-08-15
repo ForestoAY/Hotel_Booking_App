@@ -41,7 +41,10 @@ const isAdmin = function(req, res, next){
 router.use(isLoggedIn);
 
 // List Hotel
-router.get('/listHotel', HotelController.readHotel);
+router.get('/hotel', HotelController.readHotel);
+
+// Detail Hotel
+router.get('/hotel/detail/:id', HotelController.readDetailHotel)
 
 // Logout
 router.get('/logout', UserController.getLogout)
