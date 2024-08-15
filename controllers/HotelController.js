@@ -84,8 +84,20 @@ class HotelController {
   static async getCheckout(req, res){
     const { id } = req.params // id reservation
     try {
-      const data = await Reservation.findAll();
-      res.send(data);
+      const data = await Reservation.findAll({
+        attributes: {
+          include: ['id']
+        },
+        where:{
+          id: {
+            [Op.eq]: id
+          }
+        }
+      });
+      const room = await Room.findByPk(data[0].RoomId);
+      await data[0].update({ status: 'Completed' });
+      await room.update({ status: 'Available' });
+      res.redirect(`/hotel/reservation/${data[0].UserId}`);
     } catch (err) {
       res.send(err)
     }
