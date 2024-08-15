@@ -1,5 +1,18 @@
 <%- include('partials/HeaderIsLogin', {title: "List Hotel", user}) %>
 <%- include('partials/Navbar') %>
+  <form class="d-flex justify-content-end me-3 mb-3" action="">
+    <div class="d-flex">
+      <select class="form-select me-2" name="filter" id="">
+        <option value="" hidden>Filter by Stars</option>
+        <option>1</option>
+        <option>2</option>
+        <option>3</option>
+        <option>4</option>
+        <option>5</option>
+      </select>
+      <button class="btn btn-success">Filter</button>
+    </div>
+  </form>
   <div class="container d-flex justify-content-evenly">
     <% hotel.forEach((e, i) => { %>
       <div class="card" style="width: 15.5rem;">
