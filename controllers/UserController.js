@@ -1,5 +1,6 @@
 const { User, Profile } = require('../models');
 const bcrypt = require('bcryptjs');
+const nodemailer = require('nodemailer');
 
 class UserController {
   static async getRegister(req, res){
@@ -19,13 +20,35 @@ class UserController {
     const { username, email, password } = req.body;
     try {
       await User.create({username, email, password});
+
+      const transporter = nodemailer.createTransport({
+        host: 'smtp.ethereal.email',
+        port: 587,
+        auth: {
+          user: "maddison53@ethereal.email",
+          pass: "jn7jnAPss4f63QBp6D",
+        }
+      });
+
+      const message = {
+        from: '"Maddison Foo Koch 👻" <maddison53@ethereal.email>',
+        to: email,
+        subject: "Welcome to Our Service",
+        text: "Thank you for registering!",
+        html: "<b>Thank you for registering!</b>",
+      };
+
+      const info = await transporter.sendMail(message);
+      console.log("Message sent: %s", info.messageId);
+
       res.redirect('/login');
     } catch (err) {
+      console.error('Error during registration:', err);
       if (err.name == 'SequelizeValidationError' || 'SequelizeUniqueConstraintError'){
         let errors = err.errors.map((e) => e.message);
         return res.redirect(`/register?errors=${errors}`)
       }
-      res.send(err);
+      res.status(500).send('Internal Server Error');
     }
   }
 
