@@ -1,5 +1,10 @@
 <%- include('partials/HeaderIsLogin', {title: "List Hotel", user}) %>
 <%- include('partials/Navbar') %>
+  <% if (errors){ %>
+    <div class="alert alert-danger mt-3" role="alert">
+      <%= errors %>
+    </div>
+  <%} %>
   <form class="d-flex justify-content-end me-3 mb-3" action="">
     <div class="d-flex">
       <select class="form-select me-2" name="filter" id="">

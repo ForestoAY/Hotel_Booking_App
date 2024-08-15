@@ -3,11 +3,11 @@ const { Hotel, User, Room, Reservation } = require('../models');
 
 class HotelController {
   static async readHotel(req, res){
-    const { filter } = req.query;
+    const { filter, errors } = req.query;
     try {
       const hotel = await Hotel.filterByStars(filter);
       const user = await User.findByPk(req.session.userId);
-      res.render('Hotel', { hotel, user });
+      res.render('Hotel', { hotel, user, errors });
     } catch (err) {
       res.send(err);
     }
@@ -34,6 +34,10 @@ class HotelController {
     try {
       const room = await Room.findByPk(idRoom);
       const user = await User.findByPk(req.session.userId);
+      if (room.status == "Occupied"){
+        const error = "Kamar sudah di booking";
+        return res.redirect(`/hotel?errors=${error}`);
+      }
       res.render('Booking', { room, user });
     } catch (err) {
       res.send(err);
@@ -65,11 +69,8 @@ class HotelController {
         },
         attributes: {
           include: ['id']
-        } 
-
+        }
       })
-      
-      // res.send(data);
       res.render('Reservation', { data, user });
     } catch (err) {
       res.send(err.name)
