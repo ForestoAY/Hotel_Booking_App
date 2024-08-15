@@ -1,7 +1,11 @@
+const { User } = require('../models');
+
 class HomeController {
   static async home(req, res){
+    const { role } = req.session;
     try {
-      res.render('Home');
+      const user = await User.findByPk(req.session.userId);
+      res.render('Home', { user, role });
     } catch (err) {
       res.send(err);
     }
