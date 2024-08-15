@@ -1,24 +1,17 @@
 <%- include('partials/HeaderIsLogin', {title: "List Hotel", user}) %>
-  <table class="table table-striped">
-    <thead>
-      <tr>
-        <th>No</th>
-        <th>Name</th>
-        <th>Location</th>
-        <th>Rating</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <% hotel.forEach((e, i) => { %>
-        <tr>
-          <td><%= i+1 %></td>
-          <td><%= e.name %></td>
-          <td><%= e.location %></td>
-          <td><%= e.rating %></td>
-          <td><%= e.description %></td>
-        </tr>
-      <%}) %>
-    </tbody>
-  </table>
+  <div class="container d-flex justify-content-evenly">
+    <% hotel.forEach((e, i) => { %>
+      <div class="card" style="width: 15.5rem;">
+        <img src="<%= e.hotelUrl %>" class="card-img-top" alt="not loading" style="height:10rem">
+        <div class="card-body">
+          <h5 class="card-title"><%= e.name %></h5>
+          <p class="card-text"><%= e.location %></p>
+          <div class="d-flex">
+            <img src="/img/star.png" alt="error" style="width: 25px; height: 25px;"><p><%= e.rating %></p>
+          </div>
+          <a href="/hotel/detail/<%= e.id %>" class="btn btn-primary">Check Detail</a>
+        </div>
+      </div>
+    <%}) %>
+  </div>
 <%- include('partials/Footer') %>
