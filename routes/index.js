@@ -61,9 +61,9 @@ router.get('/hotel/reservation/:id', HotelController.readReservation);
 // Checkout
 router.get('/checkout/:id', HotelController.getCheckout);
 
-// Tambah hotel
-router.get('/user', isAdmin, UserController.readUsers);
-router.post('/hotel/add', isAdmin, UserController.deleteUser);
+// Admin dapat melihat tabel user
+router.get('/users', isAdmin, UserController.readUsers);
+router.get('/users/:id/delete', isAdmin, UserController.deleteUser);
 
 // Logout
 router.get('/logout', UserController.getLogout);

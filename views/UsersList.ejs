@@ -1,0 +1,25 @@
+<%- include('partials/HeaderIsLogin', {title: "User List", user}) %>
+<%- include('partials/Navbar') %>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>No</th>
+        <th>Username</th>
+        <th>Role</th>
+        <th>ACtion</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% data.forEach((e, i) => {%>
+        <tr>
+          <td><%= i+1 %></td>
+          <td><%= e.username %></td>
+          <td><%= e.role %></td>
+          <td>
+            <a class="btn btn-danger" href="/users/<%= e.id %>/delete">Delete</a>
+          </td>
+        </tr>
+      <%}) %> 
+    </tbody>
+  </table>
+<%- include('partials/Footer') %>

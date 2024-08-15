@@ -13,7 +13,10 @@ module.exports = (sequelize, DataTypes) => {
     static associate(models) {
       // define association here
       User.belongsToMany(models.Room, { through: models.Reservation });
-      User.hasOne(models.Profile);
+      User.hasOne(models.Profile, {
+        foreignKey: 'UserId',
+        onDelete: 'CASCADE',
+      });
     }
   }
   User.init({

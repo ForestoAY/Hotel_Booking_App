@@ -9,7 +9,8 @@ module.exports = {
       references: {
         model: 'Users',
         key: 'id'
-      }
+      },
+      onDelete: 'CASCADE'
     })
     /**
      * Add altering commands here.

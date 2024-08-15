@@ -104,15 +104,20 @@ class UserController {
 
   static async readUsers(req, res){
     try {
-      
+      const data = await User.findAll();
+      const user = await User.findByPk(req.session.userId);
+      res.render('UsersList', { data, user });
     } catch (err) {
       res.send(err);
     }
   }
 
   static async deleteUser(req, res){
+    const { id } = req.params
     try {
-      
+      const data = await User.findByPk(id);
+      await data.destroy();
+      res.redirect('/users');
     } catch (err) {
       res.send(err);
     }
