@@ -42,6 +42,9 @@ module.exports = (sequelize, DataTypes) => {
         },
         notNull: {
           msg: "Email tidak boleh kosong"
+        },
+        isEmail: {
+          msg: "Harus dalam format Email"
         }
       }
     },
@@ -54,6 +57,10 @@ module.exports = (sequelize, DataTypes) => {
         },
         notNull: {
           msg: "Password tidak boleh kosong"
+        },
+        len: {
+          args: [8],
+          msg: "Password harus memiliki minimal 8 karakter"
         }
       }
     },
