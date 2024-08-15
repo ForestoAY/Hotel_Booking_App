@@ -4,8 +4,8 @@
     "HotelId": 1,
     "roomNumber": 1,
     "price": 400000,
-    "type": "single bed",
-    "status": "available",
+    "type": "Single Bed",
+    "status": "Available",
     "roomUrl": "https://23c133e0c1637be1e07d-be55c16c6d91e6ac40d594f7e280b390.ssl.cf1.rackcdn.com/u/phhk/home/1a-Superior-Single-Room-min1.jpg"
   },
   {
@@ -13,8 +13,8 @@
     "HotelId": 1,
     "roomNumber": 2,
     "price": 450000,
-    "type": "twin bed",
-    "status": "available",
+    "type": "Twin Bed",
+    "status": "Available",
     "roomUrl": "https://www.chelseatoronto.com/en/uploads/images/2015/08/deluxe-room-double-new.jpg"
   },
   {
@@ -22,8 +22,8 @@
     "HotelId": 1,
     "roomNumber": 3,
     "price": 500000,
-    "type": "queen bed",
-    "status": "available",
+    "type": "Queen Bed",
+    "status": "Available",
     "roomUrl": "https://cdn.traveltripper.io/site-assets/512_855_12327/media/2018-02-27-075653/large_ex-queen-king-1.jpg"
   },
   {
@@ -31,8 +31,8 @@
     "HotelId": 2,
     "roomNumber": 1,
     "price": 300000,
-    "type": "single bed",
-    "status": "available",
+    "type": "Single Bed",
+    "status": "Available",
     "roomUrl": "https://23c133e0c1637be1e07d-be55c16c6d91e6ac40d594f7e280b390.ssl.cf1.rackcdn.com/u/phhk/home/1a-Superior-Single-Room-min1.jpg"
   },
   {
@@ -40,8 +40,8 @@
     "HotelId": 2,
     "roomNumber": 2,
     "price": 400000,
-    "type": "twin bed",
-    "status": "available",
+    "type": "Twin Bed",
+    "status": "Available",
     "roomUrl": "https://www.chelseatoronto.com/en/uploads/images/2015/08/deluxe-room-double-new.jpg"
   },
   {
@@ -49,8 +49,8 @@
     "HotelId": 3,
     "roomNumber": 1,
     "price": 500000,
-    "type": "single bed",
-    "status": "available",
+    "type": "Single Bed",
+    "status": "Available",
     "roomUrl": "https://23c133e0c1637be1e07d-be55c16c6d91e6ac40d594f7e280b390.ssl.cf1.rackcdn.com/u/phhk/home/1a-Superior-Single-Room-min1.jpg"
   },
   {
@@ -58,8 +58,8 @@
     "HotelId": 3,
     "roomNumber": 2,
     "price": 550000,
-    "type": "twin bed",
-    "status": "available",
+    "type": "Twin Bed",
+    "status": "Available",
     "roomUrl": "https://www.chelseatoronto.com/en/uploads/images/2015/08/deluxe-room-double-new.jpg"
   },
   {
@@ -67,8 +67,8 @@
     "HotelId": 3,
     "roomNumber": 3,
     "price": 600000,
-    "type": "queen bed",
-    "status": "available",
+    "type": "Queen Bed",
+    "status": "Available",
     "roomUrl": "https://cdn.traveltripper.io/site-assets/512_855_12327/media/2018-02-27-075653/large_ex-queen-king-1.jpg"
   },
   {
@@ -76,8 +76,8 @@
     "HotelId": 4,
     "roomNumber": 1,
     "price": 500000,
-    "type": "single bed",
-    "status": "available",
+    "type": "Single Bed",
+    "status": "Available",
     "roomUrl": "https://23c133e0c1637be1e07d-be55c16c6d91e6ac40d594f7e280b390.ssl.cf1.rackcdn.com/u/phhk/home/1a-Superior-Single-Room-min1.jpg"
   },
   {
@@ -85,8 +85,8 @@
     "HotelId": 4,
     "roomNumber": 2,
     "price": 550000,
-    "type": "twin bed",
-    "status": "available",
+    "type": "Twin Bed",
+    "status": "Available",
     "roomUrl": "https://www.chelseatoronto.com/en/uploads/images/2015/08/deluxe-room-double-new.jpg"
   },
   {
@@ -94,8 +94,8 @@
     "HotelId": 4,
     "roomNumber": 3,
     "price": 600000,
-    "type": "queen bed",
-    "status": "available",
+    "type": "Queen Bed",
+    "status": "Available",
     "roomUrl": "https://cdn.traveltripper.io/site-assets/512_855_12327/media/2018-02-27-075653/large_ex-queen-king-1.jpg"
   },
   {
@@ -103,8 +103,8 @@
     "HotelId": 5,
     "roomNumber": 3,
     "price": 450000,
-    "type": "queen bed",
-    "status": "available",
+    "type": "Queen Bed",
+    "status": "Available",
     "roomUrl": "https://cdn.traveltripper.io/site-assets/512_855_12327/media/2018-02-27-075653/large_ex-queen-king-1.jpg"
   },
   {
@@ -112,8 +112,8 @@
     "HotelId": 5,
     "roomNumber": 2,
     "price": 400000,
-    "type": "twin bed",
-    "status": "available",
+    "type": "Twin Bed",
+    "status": "Available",
     "roomUrl": "https://www.chelseatoronto.com/en/uploads/images/2015/08/deluxe-room-double-new.jpg"
   }
 ]
