@@ -29,9 +29,9 @@ class UserController {
   }
 
   static async getLogin(req, res){
-    const { errorLogin } = req.query;
+    const { errors } = req.query;
     try {
-      res.render('Login', { errorLogin });
+      res.render('Login', { errors });
     } catch (err) {
       res.send(err);
     }
@@ -40,20 +40,36 @@ class UserController {
   static async postLogin(req, res){
     const { email, password } = req.body;
     try {
-      const data = await User.findOne({ where: { email } });
-      if (data){
-        const isValidPassword = bcrypt.compareSync(password, data.password);
+      const user = await User.findOne({ where: { email } });
+      if (user){
+        const isValidPassword = bcrypt.compareSync(password, user.password);
 
         if (isValidPassword){
-          return res.redirect('/');
+          req.session.userId = user.id;
+          req.session.role = user.role;
+
+          return res.redirect('/listHotel');
         } else {
           const error = "Invalid email or password";
-          return res.redirect(`/login?errorLogin=${error}`);
+          return res.redirect(`/login?errors=${error}`);
         }
       } else {
         const error = "Invalid email or password";
-        return res.redirect(`/login?errorLogin=${error}`);
+        return res.redirect(`/login?errors=${error}`);
       }
+    } catch (err) {
+      res.send(err);
+    }
+  }
+
+  static async getLogout(req, res){
+    try {
+      req.session.destroy((err) => {
+        if(err) res.send(err);
+        else {
+          res.redirect('/login');
+        }
+      })
     } catch (err) {
       res.send(err);
     }
