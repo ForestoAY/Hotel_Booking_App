@@ -14,6 +14,10 @@ module.exports = (sequelize, DataTypes) => {
       Reservation.belongsTo(models.Room);
       Reservation.belongsTo(models.User);
     }
+
+    get priceToRupiah(){
+      return formatRupiah(this.totalPrice);
+    }
   }
   Reservation.init({
     UserId: DataTypes.INTEGER,

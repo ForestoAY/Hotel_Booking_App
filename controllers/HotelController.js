@@ -44,7 +44,8 @@ class HotelController {
     const { UserId, RoomId, checkIn, checkOut, totalPrice, status } = req.body
     try {
       await Reservation.create({ UserId, RoomId, checkIn, checkOut, totalPrice, status });
-      await Room.update({status: 'Occupied'});
+      const room = await Room.findByPk(RoomId);
+      await room.update({status: 'Occupied'});
       res.redirect(`/hotel/reservation/${UserId}`);
     } catch (err) {
       res.send(err);
@@ -61,22 +62,39 @@ class HotelController {
           UserId:{
             [Op.eq]: id
           }
-        }
+        },
+        attributes: {
+          include: ['id']
+        } 
+
       })
-      res.send(data);
-      // res.render('Reservation', { data, user });
+      
+      // res.send(data);
+      res.render('Reservation', { data, user });
     } catch (err) {
       res.send(err.name)
     }
   }
 
   static async getCheckout(req, res){
+    const { id } = req.params // id reservation
     try {
-      await Room.update({status: 'available'});
+      // const room = await Room.findByPk({
+      //   where: {
+          
+      //   }
+      // });
+      // await room.update({status: 'Available'});
+      const data = await Reservation.findByPk(id);
+      res.send(data);
+      
+      // data.update({status: 'Completed'});
     } catch (err) {
       res.send(err)
     }
   }
+
+  
 }
 
 module.exports = HotelController;

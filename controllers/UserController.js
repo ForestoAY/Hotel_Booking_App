@@ -91,7 +91,18 @@ class UserController {
     }
   }
 
-  static async getEditProfile(req, res){
+  static async postProfile(req, res){
+    const { id } = req.params;
+    const { descriptionUser, age, gender } = req.body;
+    try {
+      await Profile.create({ descriptionUser, age, gender, UserId: id });
+      res.redirect(`/profile/${id}`)
+    } catch (err) {
+      res.send(err);
+    }
+  }
+
+  static async readUsers(req, res){
     try {
       
     } catch (err) {
@@ -99,7 +110,7 @@ class UserController {
     }
   }
 
-  static async postEditProfile(req, res){
+  static async deleteUser(req, res){
     try {
       
     } catch (err) {
