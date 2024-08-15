@@ -5,7 +5,8 @@
     "roomNumber": 1,
     "price": 400000,
     "type": "single bed",
-    "status": "available"
+    "status": "available",
+    "roomUrl": "https://23c133e0c1637be1e07d-be55c16c6d91e6ac40d594f7e280b390.ssl.cf1.rackcdn.com/u/phhk/home/1a-Superior-Single-Room-min1.jpg"
   },
   {
     "id": 2,
@@ -13,7 +14,8 @@
     "roomNumber": 2,
     "price": 450000,
     "type": "twin bed",
-    "status": "available"
+    "status": "available",
+    "roomUrl": "https://www.chelseatoronto.com/en/uploads/images/2015/08/deluxe-room-double-new.jpg"
   },
   {
     "id": 3,
@@ -21,7 +23,8 @@
     "roomNumber": 3,
     "price": 500000,
     "type": "queen bed",
-    "status": "available"
+    "status": "available",
+    "roomUrl": "https://cdn.traveltripper.io/site-assets/512_855_12327/media/2018-02-27-075653/large_ex-queen-king-1.jpg"
   },
   {
     "id": 4,
@@ -29,7 +32,8 @@
     "roomNumber": 1,
     "price": 300000,
     "type": "single bed",
-    "status": "available"
+    "status": "available",
+    "roomUrl": "https://23c133e0c1637be1e07d-be55c16c6d91e6ac40d594f7e280b390.ssl.cf1.rackcdn.com/u/phhk/home/1a-Superior-Single-Room-min1.jpg"
   },
   {
     "id": 5,
@@ -37,7 +41,8 @@
     "roomNumber": 2,
     "price": 400000,
     "type": "twin bed",
-    "status": "available"
+    "status": "available",
+    "roomUrl": "https://www.chelseatoronto.com/en/uploads/images/2015/08/deluxe-room-double-new.jpg"
   },
   {
     "id": 6,
@@ -45,7 +50,8 @@
     "roomNumber": 1,
     "price": 500000,
     "type": "single bed",
-    "status": "available"
+    "status": "available",
+    "roomUrl": "https://23c133e0c1637be1e07d-be55c16c6d91e6ac40d594f7e280b390.ssl.cf1.rackcdn.com/u/phhk/home/1a-Superior-Single-Room-min1.jpg"
   },
   {
     "id": 7,
@@ -53,7 +59,8 @@
     "roomNumber": 2,
     "price": 550000,
     "type": "twin bed",
-    "status": "available"
+    "status": "available",
+    "roomUrl": "https://www.chelseatoronto.com/en/uploads/images/2015/08/deluxe-room-double-new.jpg"
   },
   {
     "id": 8,
@@ -61,7 +68,8 @@
     "roomNumber": 3,
     "price": 600000,
     "type": "queen bed",
-    "status": "available"
+    "status": "available",
+    "roomUrl": "https://cdn.traveltripper.io/site-assets/512_855_12327/media/2018-02-27-075653/large_ex-queen-king-1.jpg"
   },
   {
     "id": 9,
@@ -69,7 +77,8 @@
     "roomNumber": 1,
     "price": 500000,
     "type": "single bed",
-    "status": "available"
+    "status": "available",
+    "roomUrl": "https://23c133e0c1637be1e07d-be55c16c6d91e6ac40d594f7e280b390.ssl.cf1.rackcdn.com/u/phhk/home/1a-Superior-Single-Room-min1.jpg"
   },
   {
     "id": 10,
@@ -77,7 +86,8 @@
     "roomNumber": 2,
     "price": 550000,
     "type": "twin bed",
-    "status": "available"
+    "status": "available",
+    "roomUrl": "https://www.chelseatoronto.com/en/uploads/images/2015/08/deluxe-room-double-new.jpg"
   },
   {
     "id": 11,
@@ -85,7 +95,8 @@
     "roomNumber": 3,
     "price": 600000,
     "type": "queen bed",
-    "status": "available"
+    "status": "available",
+    "roomUrl": "https://cdn.traveltripper.io/site-assets/512_855_12327/media/2018-02-27-075653/large_ex-queen-king-1.jpg"
   },
   {
     "id": 12,
@@ -93,7 +104,8 @@
     "roomNumber": 3,
     "price": 450000,
     "type": "queen bed",
-    "status": "available"
+    "status": "available",
+    "roomUrl": "https://cdn.traveltripper.io/site-assets/512_855_12327/media/2018-02-27-075653/large_ex-queen-king-1.jpg"
   },
   {
     "id": 13,
@@ -101,6 +113,7 @@
     "roomNumber": 2,
     "price": 400000,
     "type": "twin bed",
-    "status": "available"
+    "status": "available",
+    "roomUrl": "https://www.chelseatoronto.com/en/uploads/images/2015/08/deluxe-room-double-new.jpg"
   }
 ]
