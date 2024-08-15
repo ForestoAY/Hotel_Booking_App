@@ -84,16 +84,8 @@ class HotelController {
   static async getCheckout(req, res){
     const { id } = req.params // id reservation
     try {
-      // const room = await Room.findByPk({
-      //   where: {
-          
-      //   }
-      // });
-      // await room.update({status: 'Available'});
-      const data = await Reservation.findByPk(id);
+      const data = await Reservation.findAll();
       res.send(data);
-      
-      // data.update({status: 'Completed'});
     } catch (err) {
       res.send(err)
     }
