@@ -2,8 +2,9 @@ const { Hotel, User, Room } = require('../models');
 
 class HotelController {
   static async readHotel(req, res){
+    const { filter } = req.query;
     try {
-      const hotel = await Hotel.findAll();
+      const hotel = await Hotel.filterByStars(filter);
       const user = await User.findByPk(req.session.userId);
       // res.send(user);
       res.render('Hotel', { hotel, user });
@@ -22,11 +23,25 @@ class HotelController {
           required: false
         }
       })
-      res.render('Room', { data, user });
-      // res.send(data);
-      
+      res.render('Room', { data, user });      
     } catch (err) {
       res.send(err)
+    }
+  }
+
+  static async getReserveRoom(req, res){
+    try {
+      
+    } catch (err) {
+      res.send(err);
+    }
+  }
+
+  static async postReserveRoom(req, res){
+    try {
+      
+    } catch (err) {
+      res.send(err);
     }
   }
 }

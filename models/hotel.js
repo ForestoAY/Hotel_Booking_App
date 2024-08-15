@@ -1,6 +1,7 @@
 'use strict';
 const {
-  Model
+  Model,
+  Op
 } = require('sequelize');
 module.exports = (sequelize, DataTypes) => {
   class Hotel extends Model {
@@ -12,6 +13,21 @@ module.exports = (sequelize, DataTypes) => {
     static associate(models) {
       // define association here
       Hotel.hasMany(models.Room);
+    }
+
+    static async filterByStars(filter){
+      const opt = {
+        order: [['id', 'asc']]
+      }
+      if (filter){
+        opt.where = {
+          rating: {
+            [Op.eq]: filter
+          }
+        }
+      }
+      const data = await Hotel.findAll(opt);
+      return data;
     }
   }
   Hotel.init({

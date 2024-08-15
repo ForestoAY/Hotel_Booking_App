@@ -1,4 +1,4 @@
-const { User } = require('../models');
+const { User, Profile } = require('../models');
 const bcrypt = require('bcryptjs');
 
 class UserController {
@@ -70,6 +70,38 @@ class UserController {
           res.redirect('/login');
         }
       })
+    } catch (err) {
+      res.send(err);
+    }
+  }
+
+  static async readProfile(req, res){
+    const { id } = req.params
+    try {
+      const user = await User.findByPk(req.session.userId);
+      const data = await User.findByPk(id, {
+        include: {
+          model: Profile,
+          required: false
+        }
+      });
+      res.render('Profile', { data, user })
+    } catch (err) {
+      res.send(err);
+    }
+  }
+
+  static async getEditProfile(req, res){
+    try {
+      
+    } catch (err) {
+      res.send(err);
+    }
+  }
+
+  static async postEditProfile(req, res){
+    try {
+      
     } catch (err) {
       res.send(err);
     }
