@@ -44,7 +44,7 @@ router.use(isLoggedIn);
 router.get('/hotel', HotelController.readHotel);
 
 // Detail Hotel
-router.get('/')
+router.get('/hotel/detail/:id', HotelController.readDetailHotel)
 
 // Logout
 router.get('/logout', UserController.getLogout)
