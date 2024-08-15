@@ -19,6 +19,9 @@
           <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
             <li><a class="dropdown-item" href="/profile/<%= user.id %>">Profile</a></li>
             <li><a class="dropdown-item" href="/logout">Logout</a></li>
+            <% if(role == 'admin') { %>
+              <li><a class="dropdown-item" href="/users">Users List</a></li>
+            <%}%>
           </ul>
         </div>
       </div>

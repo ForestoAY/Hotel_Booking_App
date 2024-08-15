@@ -4,11 +4,12 @@ const bcrypt = require('bcryptjs');
 class UserController {
   static async getRegister(req, res){
     let { errors } = req.query;
+    const { role } = req.session;
     try {
       if (errors) {
         errors = errors.split(',');
       }
-      res.render('Register', { errors });
+      res.render('Register', { errors, role });
     } catch (err) {
       res.send(err);
     }
@@ -30,8 +31,9 @@ class UserController {
 
   static async getLogin(req, res){
     const { errors } = req.query;
+    const { role } = req.session;
     try {
-      res.render('Login', { errors });
+      res.render('Login', { errors, role });
     } catch (err) {
       res.send(err);
     }
@@ -77,6 +79,7 @@ class UserController {
 
   static async readProfile(req, res){
     const { id } = req.params
+    const { role } = req.session;
     try {
       const user = await User.findByPk(req.session.userId);
       const data = await User.findByPk(id, {
@@ -85,7 +88,7 @@ class UserController {
           required: false
         }
       });
-      res.render('Profile', { data, user })
+      res.render('Profile', { data, user, role })
     } catch (err) {
       res.send(err);
     }
@@ -103,19 +106,25 @@ class UserController {
   }
 
   static async readUsers(req, res){
+    const { errors } = req.query;
+    const { role } = req.session;
     try {
       const data = await User.findAll();
       const user = await User.findByPk(req.session.userId);
-      res.render('UsersList', { data, user });
+      res.render('UsersList', { data, user, errors, role });
     } catch (err) {
       res.send(err);
     }
   }
 
   static async deleteUser(req, res){
-    const { id } = req.params
+    const { id } = req.params;
     try {
       const data = await User.findByPk(id);
+      if(req.session.userId = id){
+        const error = "Tidak bisa menghapus akun sendiri";
+        return res.redirect(`/users?errors=${error}`);
+      }
       await data.destroy();
       res.redirect('/users');
     } catch (err) {
