@@ -33,7 +33,7 @@
               <p class="card-text">Room: <%= e.roomNumber %></p>
               <p class="card-text">Price: <%= e.priceToRupiah %></p>
               <p class="card-text">Status: <%= e.status %></p>
-              <a href="/hotel/detail/<%= e.id %>/reserve" class="<%= e.status == 'Available' ? 'btn btn-success' : 'btn btn-danger' %>">Reserve Room</a>
+              <a href="/hotel/detail/<%= user.id %>/booking/<%= e.id %>" class="<%= e.status == 'Available' ? 'btn btn-success' : 'btn btn-danger' %>">Reserve Room</a>
             </div>
           </div>
         <%}) %>
