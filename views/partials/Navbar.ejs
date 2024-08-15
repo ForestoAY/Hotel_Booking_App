@@ -10,17 +10,29 @@
         <div class="navbar-nav">
           <a class="nav-link active" aria-current="page" href="/">Home</a>
           <a class="nav-link" href="/hotel">List Hotel</a>
-          <a class="nav-link" href="/hotel/reservation/<%= user.id %>">Reservation</a>
+          <% if(role == 'customer' || role == 'admin') {%>
+            <a class="nav-link" href="/hotel/reservation/<%= user.id %>">Reservation</a>
+          <%} %>
         </div>
-        <div class="dropdown me-3">
-          <a class="nav-link dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
-            <%= user.username %>
-          </a>
-          <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-            <li><a class="dropdown-item" href="/profile/<%= user.id %>">Profile</a></li>
-            <li><a class="dropdown-item" href="/logout">Logout</a></li>
-          </ul>
-        </div>
+        <% if(!role) {%>
+          <div class="d-flex">
+            <a class="nav-link me-3" href="/register">Register</a>
+            <a class="nav-link me-3" href="/login">Login</a>
+          </div>
+        <%} else {%>
+          <div class="dropdown me-3">
+            <a class="nav-link dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+              <%= user.username %>
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+              <li><a class="dropdown-item" href="/profile/<%= user.id %>">Profile</a></li>
+              <li><a class="dropdown-item" href="/logout">Logout</a></li>
+              <% if(role == 'admin') { %>
+                <li><a class="dropdown-item" href="/users">Users List</a></li>
+              <%}%>
+            </ul>
+          </div>
+        <%}%>
       </div>
     </div>
   </nav>

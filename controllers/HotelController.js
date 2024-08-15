@@ -4,10 +4,11 @@ const { Hotel, User, Room, Reservation } = require('../models');
 class HotelController {
   static async readHotel(req, res){
     const { filter, errors } = req.query;
+    const { role } = req.session;
     try {
       const hotel = await Hotel.filterByStars(filter);
       const user = await User.findByPk(req.session.userId);
-      res.render('Hotel', { hotel, user, errors });
+      res.render('Hotel', { hotel, user, errors, role });
     } catch (err) {
       res.send(err);
     }
@@ -15,6 +16,7 @@ class HotelController {
 
   static async readDetailHotel(req, res){
     const { id } = req.params
+    const { role } = req.session;
     try {
       const user = await User.findByPk(req.session.userId);
       const data = await Hotel.findByPk(id, {
@@ -23,7 +25,7 @@ class HotelController {
           required: false
         }
       })
-      res.render('Room', { data, user });      
+      res.render('Room', { data, user, role });      
     } catch (err) {
       res.send(err)
     }
@@ -31,6 +33,7 @@ class HotelController {
 
   static async bookingRoom(req, res){
     const { idRoom } = req.params
+    const { role } = req.session;
     try {
       const room = await Room.findByPk(idRoom);
       const user = await User.findByPk(req.session.userId);
@@ -38,7 +41,7 @@ class HotelController {
         const error = "Kamar sudah di booking";
         return res.redirect(`/hotel?errors=${error}`);
       }
-      res.render('Booking', { room, user });
+      res.render('Booking', { room, user, role });
     } catch (err) {
       res.send(err);
     }
@@ -58,6 +61,7 @@ class HotelController {
 
   static async readReservation(req, res){
     const { id } = req.params
+    const { role } = req.session;
     try {
       const user = await User.findByPk(req.session.userId);
       const data = await Reservation.findAll({
@@ -71,7 +75,7 @@ class HotelController {
           include: ['id']
         }
       })
-      res.render('Reservation', { data, user });
+      res.render('Reservation', { data, user, role });
     } catch (err) {
       res.send(err.name)
     }
@@ -80,16 +84,8 @@ class HotelController {
   static async getCheckout(req, res){
     const { id } = req.params // id reservation
     try {
-      // const room = await Room.findByPk({
-      //   where: {
-          
-      //   }
-      // });
-      // await room.update({status: 'Available'});
-      const data = await Reservation.findByPk(id);
+      const data = await Reservation.findAll();
       res.send(data);
-      
-      // data.update({status: 'Completed'});
     } catch (err) {
       res.send(err)
     }

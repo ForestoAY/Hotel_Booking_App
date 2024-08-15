@@ -1,4 +1,4 @@
-<%- include('partials/HeaderIsLogin', {title: "Reserve Room", user}) %>
+<%- include('partials/Header', {title: "Reserve Room", user}) %>
 <%- include('partials/Navbar') %>
 <div class="container">
   <form action="/hotel/detail/<%= user.id %>/booking/<%= room.id %>" method="post">
