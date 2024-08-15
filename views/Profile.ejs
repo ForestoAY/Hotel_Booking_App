@@ -106,25 +106,41 @@
   }
 </style>
 <%- include('partials/Navbar') %>
-<div class="parent-container">
-  <div class="container1">
-    <div class="card">
-      <div class="front">
-        <div class="card-top">
-          <p class="card-top-para text">Profile</p>
+<% if(!data.Profile) { %>
+  <form action="/profile/<%= data.id %>/add" method="post">
+    <label for="">Description</label>
+    <input type="text" name="descriptionUser">
+    <label for="">Age</label>
+    <input type="number" name="age">
+    <label for="">Gender</label>
+    <input type="text" name="gender">
+    <button type="submit">Submit</button>
+  </form>
+<%} else { %>
+  <div class="parent-container">
+    <div class="container1">
+      <div class="card">
+        <div class="front">
+          <div class="card-top">
+            <p class="card-top-para text">Profile</p>
+          </div>
+          <svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" fill="orange" class="bi bi-person-circle" viewBox="0 0 16 16">
+            <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"></path>
+            <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"></path>
+          </svg>
+          <p class="heading text"><%= data.username %></p>
+          <p class="follow text"><%= data.email %></p>
         </div>
-        <svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" fill="orange" class="bi bi-person-circle" viewBox="0 0 16 16">
-          <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"></path>
-          <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"></path>
-        </svg>
-        <p class="heading text"><%= data.username %></p>
-        <p class="follow text"><%= data.email %></p>
-      </div>
-      <div class="back">
-        
+        <div class="back">
+          <p class="follow text"><%= data.Profile.descriptionUser %></p>
+          <p class="follow text"><%= data.Profile.age %></p>
+          <p class="follow text"><%= data.Profile.gender %></p>
+        </div>
       </div>
     </div>
   </div>
-</div>
+
+<% }%>
+
 
 <%- include('partials/Footer') %>

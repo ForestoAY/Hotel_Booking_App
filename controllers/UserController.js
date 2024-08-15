@@ -91,17 +91,33 @@ class UserController {
     }
   }
 
-  static async getEditProfile(req, res){
+  static async postProfile(req, res){
+    const { id } = req.params;
+    const { descriptionUser, age, gender } = req.body;
     try {
-      
+      await Profile.create({ descriptionUser, age, gender, UserId: id });
+      res.redirect(`/profile/${id}`)
     } catch (err) {
       res.send(err);
     }
   }
 
-  static async postEditProfile(req, res){
+  static async readUsers(req, res){
     try {
-      
+      const data = await User.findAll();
+      const user = await User.findByPk(req.session.userId);
+      res.render('UsersList', { data, user });
+    } catch (err) {
+      res.send(err);
+    }
+  }
+
+  static async deleteUser(req, res){
+    const { id } = req.params
+    try {
+      const data = await User.findByPk(id);
+      await data.destroy();
+      res.redirect('/users');
     } catch (err) {
       res.send(err);
     }

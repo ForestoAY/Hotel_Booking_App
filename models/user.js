@@ -13,7 +13,10 @@ module.exports = (sequelize, DataTypes) => {
     static associate(models) {
       // define association here
       User.belongsToMany(models.Room, { through: models.Reservation });
-      User.hasOne(models.Profile);
+      User.hasOne(models.Profile, {
+        foreignKey: 'UserId',
+        onDelete: 'CASCADE',
+      });
     }
   }
   User.init({
@@ -69,7 +72,7 @@ module.exports = (sequelize, DataTypes) => {
     }
   }, {
     hooks: {
-      beforeCreate(instance, options){
+      async beforeCreate(instance, options){
         const salt = bcrypt.genSaltSync(10);
         const hash = bcrypt.hashSync(instance.password, salt);
         instance.password = hash;

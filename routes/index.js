@@ -20,7 +20,6 @@ router.post('/login', UserController.postLogin);
 
 // Middleware Login
 const isLoggedIn = function(req, res, next){
-  console.log(req.session);
   if(!req.session.userId){
     const error = 'Mohon login dahulu';
     res.redirect(`/login?errors=${error}`);
@@ -31,10 +30,8 @@ const isLoggedIn = function(req, res, next){
 
 // Middleware role admin
 const isAdmin = function(req, res, next){
-  console.log(req.session);
   if(req.session.userId && req.session.role != 'admin'){
-    const error = 'Tidak punya akses';
-    res.redirect(`/login?errors=${error}`);
+    res.redirect(`/unauthorized`);
   } else {
     next();
   }
@@ -46,8 +43,7 @@ router.use(isLoggedIn);
 // Profile
 router.get('/profile/:id', UserController.readProfile);
 
-router.get('/profile/:id/edit', UserController.getEditProfile);
-router.post('/profile/:id/edit', UserController.postEditProfile);
+router.post('/profile/:id/add', UserController.postProfile);
 
 // List Hotel
 router.get('/hotel', HotelController.readHotel);
@@ -65,6 +61,9 @@ router.get('/hotel/reservation/:id', HotelController.readReservation);
 // Checkout
 router.get('/checkout/:id', HotelController.getCheckout);
 
+// Admin dapat melihat tabel user
+router.get('/users', isAdmin, UserController.readUsers);
+router.get('/users/:id/delete', isAdmin, UserController.deleteUser);
 
 // Logout
 router.get('/logout', UserController.getLogout);
