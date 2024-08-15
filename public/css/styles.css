@@ -7,7 +7,7 @@
 html, body {
   height: 100%;
   font-family: Arial, sans-serif;
-  background: url("/img/room4.jpg") no-repeat center center/cover
+  background: url("/img/room5.jpg") no-repeat center center/cover
 }
 
 body {
@@ -20,25 +20,29 @@ body {
 .hero {
   background: url("/img/lobby1.jpg") no-repeat center center/cover;
   background-blend-mode: darken;
-  color: #fff;
+  /* color: #fff; */
   text-align: center;
-  padding: 100px 20px;
+  /* padding: 100px 20px; */
 }
 
 .hero-content {
+  color: #fff;
   max-width: 900px;
+  height: 500px;
   margin: 0 auto;
-  text-shadow:
+  align-content: center;
+  /* text-shadow:
         1px 1px 0 #000, 
         -1px -1px 0 #000,
         1px -1px 0 #000,
-        -1px 1px 0 #000;
+        -1px 1px 0 #000; */
 }
 
 .hero h2 {
-  font-size: 4rem;
+  font-family: Montserrat;
+  font-size: 5rem;
   font-weight: bold;
-  margin-bottom: 20px;
+  margin-bottom: 50px;;
 }
 
 .hero p {

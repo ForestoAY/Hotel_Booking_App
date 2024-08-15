@@ -5,7 +5,7 @@
       <%= errors %>
     </div>
   <%} %>
-  <form class="d-flex justify-content-end me-3 mb-3" action="">
+  <form class="d-flex justify-content-end me-3 mb-3"  action="">
     <div class="d-flex">
       <select class="form-select me-2" name="filter" id="">
         <option value="" hidden>Filter by Stars</option>
@@ -18,15 +18,15 @@
       <button class="btn btn-success">Filter</button>
     </div>
   </form>
-  <div class="container d-flex justify-content-evenly">
+  <div class="container d-flex justify-content-evenly" style="margin:auto;">
     <% hotel.forEach((e, i) => { %>
       <div class="card" style="width: 15.5rem;">
         <img src="<%= e.hotelUrl %>" class="card-img-top" alt="not loading" style="height:10rem">
-        <div class="card-body">
+        <div class="card-body" style="text-align: center;">
           <h5 class="card-title"><%= e.name %></h5>
           <p class="card-text"><%= e.location %></p>
           <div class="d-flex">
-            <img src="/img/star.png" alt="error" style="width: 25px; height: 25px;"><p><%= e.rating %></p>
+            <img src="/img/star.png" alt="error" style="width: 25px; height: 25px; margin: 0 0 0 85px;"><p style="margin: 0 0 0 0;"><%= e.rating %></p>
           </div>
           <a href="/hotel/detail/<%= e.id %>" class="btn btn-primary">Check Detail</a>
         </div>
