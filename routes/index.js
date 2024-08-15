@@ -7,6 +7,9 @@ const router = require('express').Router();
 // Landing Page
 router.get('/', HomeController.home);
 
+// Tampilan error
+router.get('/unauthorized', HomeController.unauthorized);
+
 // Register
 router.get('/register', UserController.getRegister);
 router.post('/register', UserController.postRegister);
@@ -40,11 +43,21 @@ const isAdmin = function(req, res, next){
 // Route di bawah ini harus login terlebih dahulu
 router.use(isLoggedIn);
 
+// Profile
+router.get('/profile/:id', UserController.readProfile);
+
+router.get('/profile/:id/edit', UserController.getEditProfile);
+router.post('/profile/:id/edit', UserController.postEditProfile);
+
 // List Hotel
 router.get('/hotel', HotelController.readHotel);
 
 // Detail Hotel
 router.get('/hotel/detail/:id', HotelController.readDetailHotel)
+
+// Reserve Hotel
+router.get('/hotel/detail/:id/reserve', HotelController.getReserveRoom)
+router.post('/hotel/detail/:id/reserve', HotelController.postReserveRoom)
 
 // Logout
 router.get('/logout', UserController.getLogout)

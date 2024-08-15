@@ -22,11 +22,25 @@ class HotelController {
           required: false
         }
       })
-      res.render('Room', { data, user });
-      // res.send(data);
-      
+      res.render('Room', { data, user });      
     } catch (err) {
       res.send(err)
+    }
+  }
+
+  static async getReserveRoom(req, res){
+    try {
+      
+    } catch (err) {
+      res.send(err);
+    }
+  }
+
+  static async postReserveRoom(req, res){
+    try {
+      
+    } catch (err) {
+      res.send(err);
     }
   }
 }
