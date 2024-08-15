@@ -1,17 +1,5 @@
 <%- include('partials/HeaderIsLogin', {title: "List Room", user}) %>
-<style>
-  footer {
-    background-color: #f1f1f1;
-    padding: 20px;
-    text-align: center;
-    margin-top: auto; 
-  }
 
-  footer .container {
-    max-width: 1200px;
-    margin: 0 auto;
-  }
-</style>
 <%- include('partials/Navbar') %>
   <div class="container d-flex justify-content-between">
     <div class="container">
@@ -23,8 +11,8 @@
         </div>
       </div>
     </div>
-    <div class="container">
-      <div class="d-flex flex-column">
+    <div class="container" style="height: 90vh;">
+      <div class="d-flex flex-column" style="background-color: #fff">
         <% data.Rooms.forEach((e) => { %>
           <div class="d-flex mb-3">
             <img src="<%= e.roomUrl %>" class="card-img-top" alt="not loading" style="height: 10rem; width: 20rem;">
@@ -41,3 +29,4 @@
     </div>
   </div>
 <%- include('partials/Footer') %>
+
