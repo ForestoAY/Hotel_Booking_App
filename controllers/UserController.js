@@ -25,21 +25,22 @@ class UserController {
         host: 'smtp.ethereal.email',
         port: 587,
         auth: {
-          user: "maddison53@ethereal.email",
-          pass: "jn7jnAPss4f63QBp6D",
+          user: "mathew.kiehn@ethereal.email",
+          pass: "tk22XEkECg2EjSkYTY",
         }
       });
 
       const message = {
-        from: '"Maddison Foo Koch 👻" <maddison53@ethereal.email>',
+        from: '"Mathew Kiehn" <mathew.kiehn@ethereal.email>',
         to: email,
-        subject: "Welcome to Our Service",
-        text: "Thank you for registering!",
-        html: "<b>Thank you for registering!</b>",
+        subject: "Success Register",
+        text: "Hello world?",
+        html: "<h1>Welcome to Our Service</h1><p>Your registration was successful!</p>",
       };
 
       const info = await transporter.sendMail(message);
       console.log("Message sent: %s", info.messageId);
+      console.log("Preview URL: %s", nodemailer.getTestMessageUrl(info));
 
       res.redirect('/login');
     } catch (err) {
