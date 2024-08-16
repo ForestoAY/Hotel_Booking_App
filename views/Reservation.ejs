@@ -1,5 +1,10 @@
 <%- include('partials/Header', {title: "Reserve Room", user}) %>
 <%- include('partials/Navbar') %>
+<% if (errors){ %>
+  <div class="alert alert-danger mt-3" role="alert">
+    <%= errors %>
+  </div>
+<%} %>
 <div class="container mt-5">
   <table class="table table-striped">
     <thead>
@@ -8,6 +13,8 @@
         <th>Check In</th>
         <th>Batas Check Out</th>
         <th>Price</th>
+        <th>Room Number</th>
+        <th>Hotel</th>
         <th>Status</th>
         <th>Action</th>
       </tr>
@@ -19,6 +26,8 @@
           <td><%= e.checkIn %></td>
           <td><%= e.checkOut %></td>
           <td><%= e.totalPrice %></td>
+          <td><%= e.Room.roomNumber %></td>
+          <td><%= e.Room.Hotel.name %></td>
           <td><%= e.status %></td>
           <td>
             <a class="btn btn-warning" href="/checkout/<%= e.id %>">Check Out</a>
