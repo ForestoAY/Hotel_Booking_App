@@ -12,7 +12,10 @@ module.exports = (sequelize, DataTypes) => {
     static associate(models) {
       // define association here
       Reservation.belongsTo(models.Room);
-      Reservation.belongsTo(models.User);
+      Reservation.belongsTo(models.User, {
+        foreignKey: 'UserId',
+        onDelete: 'CASCADE',
+      });
     }
 
     get priceToRupiah(){
