@@ -62,6 +62,7 @@ class HotelController {
   static async readReservation(req, res){
     const { id } = req.params
     const { role } = req.session;
+    let { errors } = req.query;
     try {
       const user = await User.findByPk(req.session.userId);
       const data = await Reservation.findAll({
@@ -73,9 +74,18 @@ class HotelController {
         },
         attributes: {
           include: ['id']
+        },
+        include: {
+          model: Room,
+          required: false,
+          include: {
+            model: Hotel,
+            required: false,
+          }
         }
       })
-      res.render('Reservation', { data, user, role });
+      // res.send(data)
+      res.render('Reservation', { data, user, role, errors });
     } catch (err) {
       res.send(err.name)
     }
@@ -95,6 +105,10 @@ class HotelController {
         }
       });
       const room = await Room.findByPk(data[0].RoomId);
+      if(data[0].status == 'Completed'){
+        const error = "Sudah checkout";
+        return res.redirect(`/hotel/reservation/${data[0].UserId}?errors=${error}`);
+      }
       await data[0].update({ status: 'Completed' });
       await room.update({ status: 'Available' });
       res.redirect(`/hotel/reservation/${data[0].UserId}`);
