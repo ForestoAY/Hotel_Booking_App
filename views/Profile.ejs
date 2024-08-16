@@ -95,18 +95,18 @@
 </style>
 <%- include('partials/Navbar') %>
 <% if(!data.Profile) { %>
-  <div class="container">
+  <div class="container mt-3">
     <form action="/profile/<%= data.id %>/add" method="post">
       <div class="mb-3">
-        <label for="" class="form-label">Description</label>
+        <label for="" class="form-label" style="background-color: wheat;">Description</label>
         <input type="text" class="form-control" name="descriptionUser">
       </div>
       <div class="mb-3">
-        <label for="" class="form-label">Age</label>
+        <label for="" class="form-label" style="background-color: wheat;">Age</label>
         <input type="number" class="form-control" name="age">
       </div>
       <div class="mb-3">
-        <label for="" class="form-label">Gender</label>
+        <label for="" class="form-label" style="background-color: wheat;">Gender</label>
         <input type="text" class="form-control" name="gender">
       </div>
       <button class="btn btn-success" type="submit">Submit</button>

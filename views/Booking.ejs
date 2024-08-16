@@ -1,13 +1,23 @@
 <%- include('partials/Header', {title: "Reserve Room", user}) %>
+<style>
+  h3 {
+    text-shadow:
+        1px 1px 0 #000, 
+        -1px -1px 0 #000,
+        1px -1px 0 #000,
+        -1px 1px 0 #000;
+  }
+</style>
 <%- include('partials/Navbar') %>
-<div class="container">
+
+<div class="container mt-5">
   <form action="/hotel/detail/<%= user.id %>/booking/<%= room.id %>" method="post">
     <div class="form-group">
-      <label for="">Check In</label>
+      <label for="" style="background-color: wheat;">Check In</label>
       <input type="date" class="form-control mb-3" name="checkIn">
-      <label for="">Check Out</label>
+      <label for="" style="background-color: wheat;">Check Out</label>
       <input type="date" class="form-control mb-3" name="checkOut">
-      <h3>Would you like to book this room? </h3>
+      <h3 style=" color: white;">Would you like to book this room? </h3>
 
       <input type="number" hidden name="UserId" value="<%= user.id %>">
       <input type="number" hidden name="RoomId" value="<%= room.id %>">

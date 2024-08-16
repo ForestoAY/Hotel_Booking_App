@@ -145,7 +145,7 @@ class UserController {
     const { id } = req.params;
     try {
       const data = await User.findByPk(id);
-      if(req.session.userId = id){
+      if(req.session.userId == data.id){
         const error = "Tidak bisa menghapus akun sendiri";
         return res.redirect(`/users?errors=${error}`);
       }
